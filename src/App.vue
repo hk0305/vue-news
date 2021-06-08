@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    
+    <!-- url 주소에 따른 view를 보여준다 -->
+    <router-view></router-view>
   </div>
 </template>
 
@@ -9,7 +10,7 @@
 
 
 export default {
-  
+
 }
 </script>
 
