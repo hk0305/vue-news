@@ -2,7 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 
 // 라우터 가져오기
-import { router } from './router/index.js';
+import { router } from './routes/index.js';
 
 Vue.config.productionTip = false
 

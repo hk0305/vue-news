@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <!-- ToolBar 컴포넌트를 태그로 등록 -->
-    <!-- Mac Option 누른 후 클릭 -->
+    <!-- Mac: Option 누른 후 클릭 -->
+    <!-- Window: Alt 누른 후 클릭 -->
     <!-- <ToolBal></ToolBal>와 동일하다 -->
     <tool-bar></tool-bar>
     <!-- url 주소에 따른 view를 보여준다 -->
