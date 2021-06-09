@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <!-- ToolBar 컴포넌트를 태그로 등록 -->
+    <!-- Mac Option 누른 후 클릭 -->
+    <!-- <ToolBal></ToolBal>와 동일하다 -->
+    <tool-bar></tool-bar>
     <!-- url 주소에 따른 view를 보여준다 -->
     <router-view></router-view>
   </div>
@@ -7,20 +11,15 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-
+import ToolBar from './components/Toolbar.vue';
 
 export default {
-
+  components: {
+    ToolBar,
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
