@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { fetchNewsList } from '../api/index.js'
 
 export default {
   data () {
@@ -15,10 +15,15 @@ export default {
     }
   },
   created() {
+    // 객체를 맵핑
+    var vm = this;
     // axios는 promise 기반
-    axios.get('https://api.hnpwa.com/v0/news/1.json')
-      .then(response => console.log(response))
-      .catch(err => console.err(err))
+    fetchNewsList()
+      .then(function(response) {
+        console.log(response);
+        vm.users = response.data;
+      })
+      .catch(err => console.error(err))
   }
 }
 </script>
