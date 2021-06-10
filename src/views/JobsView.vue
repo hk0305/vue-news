@@ -1,7 +1,7 @@
 <!-- <vue>로 vue file 자동완성 -->
 <template>
   <div>
-      <div v-for="job in jobs" v-bind:key="job.id">{{ job }}</div>
+      <div v-for="job in jobs" v-bind:key="job.id">{{ job.title }}</div>
   </div>
 </template>
 
@@ -15,9 +15,8 @@ export default {
     }
   },
   created() {
-    var vm = this;
     fetchJobsList()
-      .then(response => vm.jobs = response.data)
+      .then(response => this.jobs = response.data)
       .catch(err => console.error(err))
   }
 }

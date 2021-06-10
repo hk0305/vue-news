@@ -21,5 +21,7 @@ function fetchJobsList() {
 
 // 3. Export
 export {
-    fetchNewsList, fetchAskList, fetchJobsList
-}
+    fetchNewsList,
+    fetchAskList,
+    fetchJobsList,
+};

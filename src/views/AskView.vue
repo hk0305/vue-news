@@ -1,7 +1,7 @@
 <!-- <vue>로 vue file 자동완성 -->
 <template>
   <div>
-      <div v-for="ask in asks" v-bind:key="ask.item">{{ ask }}</div>
+      <div v-for="item in ask" v-bind:key="item.item">{{ item.title }}</div>
   </div>
 </template>
 
@@ -11,13 +11,12 @@ import { fetchAskList } from '../api/index.js';
 export default {
   data () {
     return {
-      asks: []
+      ask: []
     }
   },
   created() {
-    var vm = this;
     fetchAskList()
-      .then(response => vm.asks = response.data)
+      .then(response => this.ask = response.data)
       .catch(err => console.error(err))
   }
 }
@@ -25,4 +24,4 @@ export default {
 
 <style>
 
-</style>scf
+</style>
