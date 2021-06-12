@@ -1,12 +1,12 @@
 <!-- <vue>로 vue file 자동완성 -->
 <template>
   <div>
-      <div v-for="job in jobs" v-bind:key="job.id">{{ job.title }}</div>
+      <div v-for="job in this.$store.state.jobs" v-bind:key="job.id">{{ job.title }}</div>
   </div>
 </template>
 
 <script>
-import { fetchJobsList } from '../api/index.js';
+// import { fetchJobsList } from '../api/index.js';
 
 export default {
   data() {
@@ -15,9 +15,12 @@ export default {
     }
   },
   created() {
+    this.$store.dispatch('FETCH_JOBS');
+    /**
     fetchJobsList()
       .then(response => this.jobs = response.data)
       .catch(err => console.error(err))
+    */
   }
 }
 </script>
