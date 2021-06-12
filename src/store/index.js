@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { fetchAskList, fetchJobsList, fetchNewsList } from '../api/index.js';
+import mutations from './mutations.js';
+import actions from './actions.js';
 
 Vue.use(Vuex);
 
@@ -18,38 +19,7 @@ export const store = new Vuex.Store({
         }
     },
     // context.commit의 mutaion으로 전달받은 값을 stats로 전달
-    mutations: {
-        SET_NEWS(state, news) {
-            state.news = news;
-        },
-        SET_JOBS(state, jobs) {
-            state.jobs = jobs;
-        },
-        SET_ASK(state, ask) {
-            state.ask = ask;
-        }
-    },
+    mutations, // mutations.js 그대로 호출
     // NewsView에서의 API actions - context 연결 및 response data 전달
-    actions: {
-        FETCH_NEWS(context) {
-          // 1. API 호출
-          fetchNewsList()
-            .then(response => {
-              console.log(response);
-              // 2. mutations와 연결
-              context.commit('SET_NEWS', response.data);
-            })
-            .catch(err => console.error(err));
-        },
-        FETCH_JOBS({ commit }) {
-            fetchJobsList()
-              .then(({ data }) => commit('SET_JOBS', data))
-              .catch(err => console.error(err));
-        },
-        FETCH_ASK({ commit }) {
-            fetchAskList()
-                .then(({ data }) => commit('SET_ASK', data))
-                .catch(err => console.error(err));
-        }
-    }
+    actions,
 });
