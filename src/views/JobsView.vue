@@ -9,11 +9,11 @@
 // import { fetchJobsList } from '../api/index.js';
 
 export default {
-  data() {
-    return {
-      jobs: []
-    }
-  },
+//data() {
+//  return {
+//    jobs: []
+//  }
+//},
   created() {
     this.$store.dispatch('FETCH_JOBS');
     /**
