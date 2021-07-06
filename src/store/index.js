@@ -11,6 +11,7 @@ export const store = new Vuex.Store({
         news: [],
         jobs: [],
         ask: [],
+        user: {},   // 객체는 {}
     },
     getters: {
         // mapGetters 사용하기(AskView.vue)
