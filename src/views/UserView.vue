@@ -10,6 +10,7 @@
 // import axios from 'axios';
 
 export default {
+  // 화면에 표시되는 템플릿 문법이 깔끔해짐
   computed: {
     userInfo() {
       return this.$store.state.user;

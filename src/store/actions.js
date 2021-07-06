@@ -2,7 +2,8 @@ import {
     fetchAskList, 
     fetchJobsList, 
     fetchNewsList, 
-    fetchUserInfo 
+    fetchUserInfo,
+    fetchCommentItem,
 } from '../api/index.js';
 
 export default {
@@ -31,4 +32,9 @@ export default {
             .then(({ data }) => commit('SET_USER', data))
             .catch(err => console.error(err));
     },
+    FETCH_ITEM({ commit }, id) {
+        fetchCommentItem(id)
+            .then(({ data }) => commit('SET_ITEM', data))
+            .catch(err => console.error(err));
+    }
 };
