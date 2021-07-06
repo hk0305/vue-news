@@ -18,7 +18,10 @@ export const store = new Vuex.Store({
         // mapGetters 사용하기(AskView.vue)
         fetchedAsk(state) {
             return state.ask;
-        }
+        },
+        fetchedItem(state) {
+            return state.item;
+        },
     },
     // context.commit의 mutaion으로 전달받은 값을 stats로 전달
     mutations, // mutations.js 그대로 호출
